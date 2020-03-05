@@ -77,13 +77,26 @@ viewFooter _ =
 
 hotlineWebring : Element msg
 hotlineWebring =
-    row [ centerX, centerY ] [ webringArrow "⇜" "https://hotlinewebring.club/wilhall/previous", el [ paddingEach { top = 10, left = 0, right = 0, bottom = 0 } ] (text "hotline webring"), webringArrow "⇝" "https://hotlinewebring.club/wilhall/next" ]
+    row [ centerX, centerY ] [ webringArrow "⇜" "https://hotlinewebring.club/wilhall/previous", el [ paddingEach { top = 10, left = 0, right = 0, bottom = 0 } ] webringHomeLink, webringArrow "⇝" "https://hotlinewebring.club/wilhall/next" ]
+
+
+webringHomeLink : Element msg
+webringHomeLink =
+    link
+        [ Font.size 20
+        , Font.color (rgb255 130 138 202)
+        , mouseOver [ alpha 0.5 ]
+        ]
+        { label = text "hotline webring"
+        , url = "https://hotlinewebring.club/"
+        }
 
 
 webringArrow : String -> String -> Element msg
 webringArrow label url =
     link
-        [ Font.size 40
+        [ Font.size 50
+        , Font.bold
         , Font.color (rgb255 130 138 202)
         , mouseOver [ alpha 0.5 ]
         ]
