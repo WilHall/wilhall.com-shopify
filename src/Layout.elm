@@ -3,6 +3,7 @@ module Layout exposing (view)
 import Element exposing (..)
 import Element.Background as Background
 import Element.Font as Font
+import Element.Region
 import Generated.Routes as Routes exposing (Route, routes)
 import Utils.Spa as Spa
 
@@ -77,7 +78,7 @@ viewFooter _ =
 
 hotlineWebring : Element msg
 hotlineWebring =
-    row [ centerX, centerY ] [ webringArrow "⇜" "https://hotlinewebring.club/wilhall/previous", el [ paddingEach { top = 10, left = 0, right = 0, bottom = 0 } ] webringHomeLink, webringArrow "⇝" "https://hotlinewebring.club/wilhall/next" ]
+    row [ centerX, centerY ] [ webringArrow "⇜" "Previous hotline webring member" "https://hotlinewebring.club/wilhall/previous", el [ paddingEach { top = 10, left = 0, right = 0, bottom = 0 } ] webringHomeLink, webringArrow "⇝" "Next hotline webring member" "https://hotlinewebring.club/wilhall/next" ]
 
 
 webringHomeLink : Element msg
@@ -92,13 +93,14 @@ webringHomeLink =
         }
 
 
-webringArrow : String -> String -> Element msg
-webringArrow label url =
+webringArrow : String -> String -> String -> Element msg
+webringArrow label ariaLabel url =
     link
         [ Font.size 50
         , Font.bold
         , Font.color (rgb255 130 138 202)
         , mouseOver [ alpha 0.5 ]
+        , Element.Region.description ariaLabel
         ]
         { label = text label
         , url = url
