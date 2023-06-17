@@ -1,3 +1,4 @@
+if (ON_CHANGE_DEBOUNCE_TIMER && PUB_SUB_EVENTS) {
 class CartRemoveButton extends HTMLElement {
   constructor() {
     super();
@@ -11,8 +12,6 @@ class CartRemoveButton extends HTMLElement {
 }
 
 customElements.define('cart-remove-button', CartRemoveButton);
-
-ON_CHANGE_DEBOUNCE_TIMER = 500
 
 class CartItems extends HTMLElement {
   constructor() {
@@ -212,3 +211,4 @@ if (!customElements.get('cart-note')) {
       }
   });
 };
+}
