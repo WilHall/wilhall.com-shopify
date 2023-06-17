@@ -274,14 +274,6 @@
     </ul>
 
     <script>
-      document.addEventListener("DOMContentLoaded", (event) => {
-        console.log("Loaded!")
-        hljs.configure({cssSelector: "code" });
-        hljs.highlightAll();
-      });
-    </script>
-
-    <script>
       window.shopUrl = '{{ request.origin }}';
       window.routes = {
         cart_add_url: '{{ routes.cart_add_url }}',
