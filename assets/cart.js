@@ -1,4 +1,4 @@
-if (ON_CHANGE_DEBOUNCE_TIMER && PUB_SUB_EVENTS) {
+if (typeof ON_CHANGE_DEBOUNCE_TIMER !== 'undefined' && typeof PUB_SUB_EVENTS !== 'undefined') {
 class CartRemoveButton extends HTMLElement {
   constructor() {
     super();
