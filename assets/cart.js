@@ -12,6 +12,8 @@ class CartRemoveButton extends HTMLElement {
 
 customElements.define('cart-remove-button', CartRemoveButton);
 
+ON_CHANGE_DEBOUNCE_TIMER = 500
+
 class CartItems extends HTMLElement {
   constructor() {
     super();
