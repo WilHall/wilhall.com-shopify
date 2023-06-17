@@ -10,8 +10,12 @@
     <link href='https://unpkg.com/@highlightjs/cdn-assets@11.8.0/styles/default.min.css' rel='stylesheet'/>
     <script src='https://unpkg.com/@highlightjs/cdn-assets@11.8.0/highlight.min.js'/>
     <script>
-    hljs.configure({cssSelector: "code" });
+      document.addEventListener("DOMContentLoaded", (event) => {
+
+        hljs.configure({cssSelector: "code" });
     hljs.highlightAll();
+      });
+    
     </script>
 
     {%- if settings.favicon != blank -%}
