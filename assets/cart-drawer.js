@@ -1,3 +1,4 @@
+if (typeof CartItems !== 'undefined') {
 class CartDrawer extends HTMLElement {
   constructor() {
     super();
@@ -126,3 +127,4 @@ class CartDrawerItems extends CartItems {
 }
 
 customElements.define('cart-drawer-items', CartDrawerItems);
+}
