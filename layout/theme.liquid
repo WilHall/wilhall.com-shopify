@@ -242,6 +242,13 @@
       document.documentElement.classList.add('shopify-design-mode');
     }
     </script>
+  <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        console.log("Loaded!")
+        hljs.configure({cssSelector: "code" });
+        hljs.highlightAll();
+      });
+    </script>
   </head>
 
   <body class="gradient">
