@@ -444,7 +444,13 @@ display: flex;
         </div>
       {%- else -%}
         <div class="profile-card">
-          <h1>Wil Hall</h1>
+          <h1>Wil Hall
+           {%- if request.page_type == 'cart' or request.page_type == 'collection' or request.page_type == 'list-collection' or request.page_type == 'search' or request.page_type == 'product' -%}
+<br />
+            <span style="color: #666666; font-size: 1rem;">Plume and Pith Ceramics</span>
+          
+    {%- endif -%}
+        </h1>
         </div>
       {%- endif -%}
     {%- endif -%}
