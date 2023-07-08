@@ -6,3 +6,6 @@ const PUB_SUB_EVENTS = {
   variantChange: 'variant-change',
   cartError: 'cart-error'
 };
+
+window.PUB_SUB_EVENTS = PUB_SUB_EVENTS
+window.ON_CHANGE_DEBOUNCE_TIMER = ON_CHANGE_DEBOUNCE_TIMER
