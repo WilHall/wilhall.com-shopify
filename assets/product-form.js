@@ -1,4 +1,12 @@
-if (typeof CartItems !== 'undefined') {
+const ON_CHANGE_DEBOUNCE_TIMER = 300;
+
+const PUB_SUB_EVENTS = {
+  cartUpdate: "cart-update",
+  quantityUpdate: "quantity-update",
+  variantChange: "variant-change",
+  cartError: "cart-error",
+};
+
 if (!customElements.get('product-form')) {
   customElements.define('product-form', class ProductForm extends HTMLElement {
     constructor() {
@@ -92,5 +100,4 @@ if (!customElements.get('product-form')) {
       }
     }
   });
-}
 }
