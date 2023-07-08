@@ -54,6 +54,10 @@ a:not(.button) {
   color: #0169b6 !important;
 }
 
+a .button {
+  color: #ffffff !important;
+}
+
 .card {
   position: relative;
   margin: auto;
