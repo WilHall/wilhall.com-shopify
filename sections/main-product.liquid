@@ -137,7 +137,7 @@
                   <dd>~{{ product.metafields.custom.width | metafield_text }} wide, ~{{ product.metafields.custom.height | metafield_text }} tall</dd>
                   {%- endif -%}
     
-                  {%- if product.variants.first and product.variants.first.weight -%}
+                  {%- if product.variants.first and product.variants.first.weight and product.variants.first.weight > 0 -%}
                   <dt>Weight</dt>
                   <dd>{{ product.variants.first.weight | weight_with_unit }}</dd>
                   {%- endif -%}
