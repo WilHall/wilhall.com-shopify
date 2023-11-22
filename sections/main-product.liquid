@@ -108,6 +108,50 @@
                   {%- endif -%}
                 </div>
               {%- endif -%}
+            {%- when 'description' -%}
+              {%- if product.description != blank -%}
+                <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                  {{ product.description }}
+                </div>
+                <dl>
+                  <dt>Product type</dt>
+                  <dd>{{ product.type }}</dd>
+    
+                  {%- if product.metafields.custom.material -%}
+                  <dt>Material</dt>
+                  <dd>{{ product.metafields.custom.material | metafield_text }}</dd>
+                  {%- endif -%}
+    
+                  {%- if product.metafields.custom.food_safe -%}
+                  <dt>Food-safe</dt>
+                  <dd>Yes</dd>
+                  {%- endif -%}
+          
+                  {%- if product.metafields.custom.dishwasher_safe -%}
+                  <dt>Dishwasher-safe</dt>
+                  <dd>Yes</dd>
+                  {%- endif -%}
+    
+                  {%- if product.metafields.custom.width and product.metafields.custom.height -%}
+                  <dt>Dimensions</dt>
+                  <dd>~{{ product.metafields.custom.width | metafield_text }} wide, ~{{ product.metafields.custom.height | metafield_text }} tall</dd>
+                  {%- endif -%}
+    
+                  {%- if product.variants.first and product.variants.first.weight -%}
+                  <dt>Weight</dt>
+                  <dd>{{ product.variants.first.weight | weight_with_unit }}</dd>
+                  {%- endif -%}
+                </dl>
+                <p class="product-detail">All ceramics are hand-thrown, painted, and glazed near Boston, MA using porcelain or stoneware clay.</p>
+                <p class="product-detail"><i><b>Product dimensions: </b></i>Width & height are measured at the widest/tallest points and rounded to the nearest quarter-inch. <b>For sets,</b> the weight is inclusive of the entire set and the width/height are of the largest piece in the set.</p>
+    
+                {%- if product.metafields.custom.food_safe -%}
+                  <p class="product-detail"><i><b>Food-safe products: </b></i>Products marked as "Food-safe" are coated in a food-safe glaze and are safe for use in the kitchen, as tableware, or in the microwave. If a product chips or cracks during use, it may become difficult to clean making it no longer food-safe.</p>
+                {%- endif -%}
+                {%- if product.metafields.custom.dishwasher_safe -%}
+                  <p class="product-detail"><i><b>Dishwasher-safe products: </b></i>Products marked as "Dishwasher-safe" can be cleaned in a dishwasher, though it is always safest to hand-wash ceramics to avoid accidental damage in the dishwasher.</p>
+                {%- endif -%}
+              {%- endif -%}
             {%- when 'inventory' -%}
               <p
                 class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -155,50 +199,6 @@
                   {%- endif -%}
                 {%- endif -%}
               </p>
-            {%- when 'description' -%}
-              {%- if product.description != blank -%}
-                <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                  {{ product.description }}
-                </div>
-                          <dl>
-              <dt>Product type</dt>
-              <dd>{{ product.type }}</dd>
-
-              {%- if product.metafields.custom.material -%}
-              <dt>Material</dt>
-              <dd>{{ product.metafields.custom.material | metafield_text }}</dd>
-              {%- endif -%}
-
-              {%- if product.metafields.custom.food_safe -%}
-              <dt>Food-safe</dt>
-              <dd>Yes</dd>
-              {%- endif -%}
-      
-              {%- if product.metafields.custom.dishwasher_safe -%}
-              <dt>Dishwasher-safe</dt>
-              <dd>Yes</dd>
-              {%- endif -%}
-
-              {%- if product.metafields.custom.width and product.metafields.custom.height -%}
-              <dt>Dimensions</dt>
-              <dd>~{{ product.metafields.custom.width | metafield_text }} wide, ~{{ product.metafields.custom.height | metafield_text }} tall</dd>
-              {%- endif -%}
-
-              {%- if product.variants.first and product.variants.first.weight -%}
-              <dt>Weight</dt>
-              <dd>{{ product.variants.first.weight | weight_with_unit }}</dd>
-              {%- endif -%}
-            </dl>
-                <p class="product-detail">All ceramics are hand-thrown, painted, and glazed near Boston, MA using porcelain or stoneware clay.</p>
-                <p class="product-detail"><i><b>Product dimensions: </b></i>Width & height are measured at the widest/tallest points and rounded to the nearest quarter-inch. <b>For sets,</b> the weight is inclusive of the entire set and the width/height are of the largest piece in the set.</p>
-
-                {%- if product.metafields.custom.food_safe -%}
-            <p class="product-detail"><i><b>Food-safe products: </b></i>Products marked as "Food-safe" are coated in a food-safe glaze and are safe for use in the kitchen, as tableware, or in the microwave. If a product chips or cracks during use, it may become difficult to clean making it no longer food-safe.</p>
-            {%- endif -%}
-                {%- if product.metafields.custom.dishwasher_safe -%}
-                  <p class="product-detail"><i><b>Dishwasher-safe products: </b></i>Products marked as "Dishwasher-safe" can be cleaned in a dishwasher, though it is always safest to hand-wash ceramics to avoid accidental damage in the dishwasher.</p>
-          {%- endif -%}
-              {%- endif -%}
             {%- when 'sku' -%}
               <p
                 class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
