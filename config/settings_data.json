@@ -292,7 +292,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "body {background: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0769\/2907\/3438\/files\/background.png?v=1685398262\") !important; background-repeat: repeat;}",
+      "body {background: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0769\/2907\/3438\/files\/background.png?v=1702495440\") !important; background-repeat: repeat;}",
       ".header-wrapper,footer,.content-container {background-color: transparent !important;}",
       ".link,.link > * {color: #0169b6 !important;}",
       "h1,h2,h3,h4 {font-family: \"Merriweather\", serif;}"
