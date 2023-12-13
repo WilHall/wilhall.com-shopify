@@ -1,4 +1,21 @@
-/* Color custom properties */
+@font-face {
+  font-family: "Font Awesome Solid";
+  src: url({{ "Font Awesome Solid" | asset_url }}) format("woff2");
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url({{ "Font Awesome Solid" | asset_url }}) format("woff2");
+}
+
+@font-face {
+  font-family: "Creativo";
+  src: url({{ "Font Awesome Solid" | asset_url }}) format("woff2");
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Merriweather" !important;
+}
 
 *[id*="related-products"] {
   display: none;
