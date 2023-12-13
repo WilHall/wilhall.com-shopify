@@ -433,7 +433,7 @@ display: flex;
     {%- endif -%}
 
     {%- if section.settings.logo_position != 'middle-center' -%}
-      {%- if request.page_type == 'index' -%}
+      {%- if request.page_type != 'index' -%}
         <div class="profile-card with-photo">
           <div role="presentation" aria-hidden="true" class="photo">
             <img class="secondary" src="https://cdn.shopify.com/s/files/1/0769/2907/3438/files/logo-alt.png?v=1685399246">
