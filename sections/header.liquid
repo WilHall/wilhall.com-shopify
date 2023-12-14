@@ -533,7 +533,7 @@
                   </header-menu>
                 {%- else -%}
                   <a href="{{ link.url }}" style="font-family: 'TAY Dreamboat'; letter-spacing: -.2rem; font-size: 1.8rem;" class="header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
-                    <span {%- if link.current %} style="text-decoration-color: #edb16b;" class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                    <span {%- if link.current %} style="text-decoration-color: #edb16b; text-decoration-thickness: .1rem;" class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                   </a>
                 {%- endif -%}
               </li>
