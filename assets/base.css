@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "Dreamboat";
-  src: url({{ "Dreamboat.woff2" | asset_url }}) format("woff2");
+  src: url({{ "dreamboat.woff" | asset_url }}) format("woff");
 }
 
 h1,h2,h3,h4,h5,h6 {
