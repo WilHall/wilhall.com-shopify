@@ -27,6 +27,10 @@ h1,h2,h3,h4,h5,h6 {
     padding-bottom: 1rem;
     }
 
+.decorative-divider.flipped {
+  transform: rotate(180);
+}
+
   @media screen and (min-width: 750px) {
 
     .decorative-divider {
