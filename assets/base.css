@@ -28,7 +28,7 @@ h1,h2,h3,h4,h5,h6 {
     }
 
 .decorative-divider.flipped {
-  transform: rotate(90deg);
+  transform: scaleY(-1);
 }
 
   @media screen and (min-width: 750px) {
