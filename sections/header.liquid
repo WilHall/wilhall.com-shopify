@@ -458,7 +458,7 @@
           <a class="pronouns" href="https://pronoun.is/they/.../themselves">they / them</a>
           <h2>UI/Usability Engineer ⁂ Ceramicist ⁂  Baker</h2>
         </div>
-      {%- elsif request.page_type == "collection" or request.page_type == "product" -%}
+      {%- elsif request.page_type != "index" and request.page_type != "page" -%}
         <div class="profile-card with-photo">
           <div role="presentation" aria-hidden="true" class="photo">
             <img class="secondary" src="https://cdn.shopify.com/s/files/1/0769/2907/3438/files/logo-alt.png?v=1685399246">
