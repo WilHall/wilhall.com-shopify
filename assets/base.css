@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Merriweather";
-  src: url({{ "Merriweather.woff2" | asset_url }}) format("woff2");
+  src: url("https://cdn.shopify.com/s/files/1/0769/2907/3438/files/Merriweather.woff2?v=1702587802") format("woff2");
 }
 
 @font-face {
   font-family: "Creativo Regular";
-  src: url({{ "Creativo.woff2" | asset_url }}) format("woff2");
+  src: url("https://cdn.shopify.com/s/files/1/0769/2907/3438/files/Creativo.woff2?v=1702587803") format("woff2");
 }
 
 @font-face {
   font-family: "Dreamboat";
-  src: url({{ "dreamboat.woff" | asset_url }}) format("woff");
+  src: url("https://cdn.shopify.com/s/files/1/0769/2907/3438/files/dreamboat.woff?v=1702587795") format("woff");
 }
 
 h1,h2,h3,h4,h5,h6 {
