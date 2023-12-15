@@ -199,14 +199,14 @@
   }
 
   @media screen and (max-width: 990px) {
-    .profile-card .secondary-logo {
+    .profile-card.with-secondary {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
     }
     
-    .profile-card .secondary-logo img {
+    .profile-card.with-secondary .secondary-logo img {
       display: none;
     }
   }
@@ -480,7 +480,7 @@
           <h2>UI/Usability Engineer ⁂ Ceramicist ⁂  Baker</h2>
         </div>
       {%- elsif request.page_type != "index" and request.page_type != "page" and request.page_type != "blog" -%}
-        <div class="profile-card horizontal with-photo">
+        <div class="profile-card horizontal with-secondary with-photo">
           <div role="presentation" aria-hidden="true" class="logo">
             <img src="https://cdn.shopify.com/s/files/1/0769/2907/3438/files/2023_Plume_and_Pith_Full_Color_Logo_MAIN_Transparent.png?v=1702635511">
           </div>
