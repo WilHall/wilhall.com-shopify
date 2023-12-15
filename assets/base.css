@@ -18,10 +18,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .wavy-underline {
-  text-decoration: wavy underline #edb16b;
-  text-decoration: underline;
-  text-decoration-style: wavy;
-  text-decoration-color: #edb16b;
+  text-decoration: underline !important;
+  text-decoration-style: wavy !important;
+  text-decoration-color: #edb16b !important;
 }
 
 *[id*="related-products"] {
