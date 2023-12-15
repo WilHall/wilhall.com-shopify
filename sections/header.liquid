@@ -40,6 +40,10 @@
     margin-left: -1.2rem;
   }
 
+  .menu-drawer__menu-item {
+    font-family: "TAY Dreamboat"
+  }
+
 
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
     .scrolled-past-header .header__heading-logo-wrapper {
@@ -297,7 +301,8 @@
                               {% render 'icon-arrow' %}
                               {% render 'icon-caret' %}
                             </summary>
-                            <div id="link-{{ link.handle | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
+                            <div id="link-{{ link.handle | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">navigation
+                          
                               <div class="menu-drawer__inner-submenu">
                                 <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
                                   {% render 'icon-arrow' %}
