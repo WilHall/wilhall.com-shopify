@@ -477,7 +477,6 @@
           {%- endcase -%}
         {%- endfor -%}
         {%- if product.type == 'Event' -%}
-          <a href="https://savvycal.com/wilhall/c8710261" data-savvycal-embed>Schedule a meeting</a>
 <script>window.SavvyCal=window.SavvyCal||function(){(SavvyCal.q=SavvyCal.q||[]).push(arguments)};</script>
 <script async src="https://embed.savvycal.com/v1/embed.js"></script>
 <script>
@@ -489,6 +488,8 @@
     }
   });
 </script>
+                                    <a href="https://savvycal.com/wilhall/c8710261" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">Schedule a meeting</a>
+
         {%- endif -%}
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">
           {{ 'products.product.view_full_details' | t }}
