@@ -482,9 +482,15 @@
           <script>
             SavvyCal('init');
           </script>
-          <a href="https://savvycal.com/{{ product.metafields.custom.savvycal_1h_id }}" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">Schedule one hour</a>
-          <a href="https://savvycal.com/{{ product.metafields.custom.savvycal_2h_id }}" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">Schedule two hours</a>
-          <a href="https://savvycal.com/{{ product.metafields.custom.savvycal_3h_id }}" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">Schedule three hours</a>
+          {%- if product.metafields.custom.savvycal_1h_id -%}
+            <a href="https://savvycal.com/{{ product.metafields.custom.savvycal_1h_id }}" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">Schedule one hour</a>
+          {%- endif -%}
+          {%- if product.metafields.custom.savvycal_1h_id -%}
+            <a href="https://savvycal.com/{{ product.metafields.custom.savvycal_2h_id }}" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">Schedule two hours</a>
+          {%- endif -%}
+          {%- if product.metafields.custom.savvycal_1h_id -%}
+            <a href="https://savvycal.com/{{ product.metafields.custom.savvycal_3h_id }}" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">Schedule three hours</a>
+          {%- endif -%}
 
         {%- endif -%}
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">
