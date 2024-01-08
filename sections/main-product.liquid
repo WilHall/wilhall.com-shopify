@@ -477,18 +477,20 @@
           {%- endcase -%}
         {%- endfor -%}
         {%- if product.type == 'Event' -%}
-<script>window.SavvyCal=window.SavvyCal||function(){(SavvyCal.q=SavvyCal.q||[]).push(arguments)};</script>
-<script async src="https://embed.savvycal.com/v1/embed.js"></script>
-<script>
-  SavvyCal('init', {
-    widget: {
-      enabled: true,
-      link: '{{ product.metafields.custom.savvycal_id }}',
-      prompt: 'Schedule a time'
-    }
-  });
-</script>
-                                    <a href="https://savvycal.com/wilhall/c8710261" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">Schedule a meeting</a>
+          <script>window.SavvyCal=window.SavvyCal||function(){(SavvyCal.q=SavvyCal.q||[]).push(arguments)};</script>
+          <script async src="https://embed.savvycal.com/v1/embed.js"></script>
+          <script>
+            SavvyCal('init', {
+              widget: {
+                enabled: true,
+                link: '{{ product.metafields.custom.savvycal_id }}',
+                prompt: 'Schedule a time'
+              }
+            });
+          </script>
+          <a href="https://savvycal.com/wilhall/2723d8be" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">Schedule one hour</a>
+          <a href="https://savvycal.com/wilhall/cbc24877" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">Schedule two hours</a>
+          <a href="https://savvycal.com/wilhall/c8710261" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">Schedule three hours</a>
 
         {%- endif -%}
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">
