@@ -90,6 +90,7 @@
                 </a>
               </div>
             {%- when 'price' -%}
+              {%- if product.type != 'event' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
                   product: product,
@@ -107,6 +108,7 @@
                     {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
                   {%- endif -%}
                 </div>
+              {%- endif -%}
               {%- endif -%}
             {%- when 'description' -%}
               {%- if product.description != blank -%}
@@ -153,6 +155,7 @@
                 {%- endif -%}
               {%- endif -%}
             {%- when 'inventory' -%}
+              {%- if product.type != 'event' -%}
               <p
                 class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
                 {{ block.shopify_attributes }}
@@ -199,6 +202,7 @@
                   {%- endif -%}
                 {%- endif -%}
               </p>
+              {%- endif -%}
             {%- when 'sku' -%}
               <p
                 class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -229,7 +233,7 @@
                 </details>
               </div>
             {%- when 'quantity_selector' -%}
-            <div>foop</div>
+              {%- if product.type != 'event' -%}
               <div
                 id="Quantity-Form-{{ section.id }}"
                 class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
@@ -315,6 +319,7 @@
                   {%- endif -%}
                 </div>
               </div>
+              {%- endif -%}
             {%- when 'popup' -%}
               <modal-opener
                 class="product-popup-modal__opener no-js-hidden quick-add-hidden"
@@ -341,10 +346,14 @@
               %}
 
             {%- when 'variant_picker' -%}
+              {%- if product.type != 'event' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+              {%- endif -%}
             {%- when 'buy_buttons' -%}
+              {%- if product.type != 'event' -%}
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
-            {%- when 'rating' -%}
+              {%- endif -%}
+              {%- when 'rating' -%}
               {%- if product.metafields.reviews.rating.value != blank -%}
                 {% liquid
                   assign rating_decimal = 0
@@ -467,6 +476,19 @@
               %}
           {%- endcase -%}
         {%- endfor -%}
+        {%- if product.type == 'event' -%}
+<script>window.SavvyCal=window.SavvyCal||function(){(SavvyCal.q=SavvyCal.q||[]).push(arguments)};</script>
+<script async src="https://embed.savvycal.com/v1/embed.js"></script>
+<script>
+  SavvyCal('init', {
+    widget: {
+      enabled: true,
+      link: '{{ product.metafields.custom.savvycal_id }}',
+      prompt: 'Schedule a time'
+    }
+  });
+</script>
+        {%- endif -%}
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">
           {{ 'products.product.view_full_details' | t }}
           {% render 'icon-arrow' %}
