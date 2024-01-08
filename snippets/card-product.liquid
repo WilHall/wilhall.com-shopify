@@ -196,7 +196,9 @@
               </p>
             {%- endif -%}
 
-            {% render 'price', product: card_product, price_class: '' %}
+            {% if product.type != 'Event' %}
+              {% render 'price', product: card_product, price_class: '' %}
+            {% endif %}
             <dl>
               <dt>Product type</dt>
               <dd>{{ card_product.type }}</dd>
