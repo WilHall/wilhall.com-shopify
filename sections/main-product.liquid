@@ -482,6 +482,9 @@
           <script>
             SavvyCal('init');
           </script>
+          {%- if product.metafields.custom.subscription_url -%}
+            <a href="{{ product.metafields.custom.subscription_url }}" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">{{ product.metafields.custom.subscription_label }}</a>
+          {%- endif -%}
           {%- if product.metafields.custom.savvycal_id_a -%}
             <a href="https://savvycal.com/{{ product.metafields.custom.savvycal_id_a }}" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">{{ product.metafields.custom.savvycal_label_a }}</a>
           {%- endif -%}
