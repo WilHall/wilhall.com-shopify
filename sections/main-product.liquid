@@ -482,14 +482,20 @@
           <script>
             SavvyCal('init');
           </script>
-          {%- if product.metafields.custom.savvycal_1h_id -%}
-            <a href="https://savvycal.com/{{ product.metafields.custom.savvycal_1h_id }}" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">Schedule one hour</a>
+          {%- if product.metafields.custom.savvycal_id_a -%}
+            <a href="https://savvycal.com/{{ product.metafields.custom.savvycal_id_a }}" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">{{ product.metafields.custom.savvycal_label_a }}</a>
           {%- endif -%}
-          {%- if product.metafields.custom.savvycal_1h_id -%}
-            <a href="https://savvycal.com/{{ product.metafields.custom.savvycal_2h_id }}" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">Schedule two hours</a>
+          {%- if product.metafields.custom.savvycal_id_b -%}
+            <a href="https://savvycal.com/{{ product.metafields.custom.savvycal_id_b }}" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">{{ product.metafields.custom.savvycal_label_b }}</a>
           {%- endif -%}
-          {%- if product.metafields.custom.savvycal_1h_id -%}
-            <a href="https://savvycal.com/{{ product.metafields.custom.savvycal_3h_id }}" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">Schedule three hours</a>
+          {%- if product.metafields.custom.savvycal_id_c -%}
+            <a href="https://savvycal.com/{{ product.metafields.custom.savvycal_id_c }}" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">{{ product.metafields.custom.savvycal_label_c }}</a>
+          {%- endif -%}
+          {%- if product.metafields.custom.savvycal_id_d -%}
+            <a href="https://savvycal.com/{{ product.metafields.custom.savvycal_id_d }}" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">{{ product.metafields.custom.savvycal_label_d }}</a>
+          {%- endif -%}
+          {%- if product.metafields.custom.savvycal_id_e -%}
+            <a href="https://savvycal.com/{{ product.metafields.custom.savvycal_id_e }}" data-savvycal-embed class="product-form__submit button button--full-width button--secondary">{{ product.metafields.custom.savvycal_label_e }}</a>
           {%- endif -%}
 
         {%- endif -%}
