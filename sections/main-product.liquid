@@ -90,7 +90,7 @@
                 </a>
               </div>
             {%- when 'price' -%}
-              {%- if product.type != 'Event' and product_type != 'Share' -%}
+              {%- if product.type != 'Event' and product.type != 'Share' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
                   product: product,
