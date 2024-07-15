@@ -155,7 +155,7 @@
                 {%- endif -%}
               {%- endif -%}
             {%- when 'inventory' -%}
-              {%- if product.type != 'Event' and product_type != 'Share' -%}
+              {%- if product.type != 'Event' and product.type != 'Share' -%}
               <p
                 class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
                 {{ block.shopify_attributes }}
@@ -233,7 +233,7 @@
                 </details>
               </div>
             {%- when 'quantity_selector' -%}
-              {%- if product.type != 'Event' -%}
+              {%- if product.type != 'Event' and product.type != 'Share' -%}
               <div
                 id="Quantity-Form-{{ section.id }}"
                 class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
@@ -346,11 +346,11 @@
               %}
 
             {%- when 'variant_picker' -%}
-              {%- if product.type != 'Event' -%}
+              {%- if product.type != 'Event' and product.type != 'Share' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- endif -%}
             {%- when 'buy_buttons' -%}
-              {%- if product.type != 'Event' -%}
+              {%- if product.type != 'Event' and product.type != 'Share' -%}
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
               {%- endif -%}
               {%- when 'rating' -%}
